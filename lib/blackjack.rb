@@ -16,12 +16,13 @@ end
 
 def get_user_input
   input = gets.chomp
-  deal_card if input == "h"
-  end_game if input == "s"
-  
-    
-  
-  
+  if input == "h"
+    deal_card
+  elsif input == "s"
+    end_game
+  else
+    invalid_command
+  end
 end
 
 def end_game(card_total)
@@ -44,6 +45,7 @@ end
 
 def invalid_command
   puts "Please enter a valid command."
+  prompt_user
 end
 
 #####################################################
