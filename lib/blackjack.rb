@@ -16,13 +16,6 @@ end
 
 def get_user_input
   input = gets.chomp
-  if input == "h"
-    deal_card
-  elsif input == "s"
-    end_game
-  else
-    invalid_command
-  end
 end
 
 def end_game(card_total)
