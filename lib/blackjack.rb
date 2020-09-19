@@ -16,7 +16,11 @@ end
 
 def get_user_input
   input = gets.chomp
-  if input == ""
+  deal_card if input == "h"
+  end_game if input == "s"
+  
+    
+  
   
 end
 
@@ -39,7 +43,7 @@ def hit?(number)
 end
 
 def invalid_command
-  # code invalid_command here
+  puts "Please enter a valid command."
 end
 
 #####################################################
