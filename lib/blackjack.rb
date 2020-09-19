@@ -23,9 +23,7 @@ def end_game(card_total)
 end
 
 def initial_round
-  card_1 = deal_card
-  card_2 = deal_card
-  card_sum = card_1 + card_2
+  card_sum = deal_card + deal_card
   display_card_total(card_sum)
   card_sum
 end
@@ -33,12 +31,13 @@ end
 def hit?(card_total)
   prompt_user
   input = get_user_input
-  if input = "h"
-    deal_card
-  elsif input = "s"
+  if input == "h"
+    card_total += deal_card
+  elsif input == "s"
     card_total
-  elsif input != "h" || "s"
+  else
     invalid_command
+    hit?(card_total)
   end
 end
 
